@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<script type='text/javascript' src='js/jquery-1.4.2.min.js'></script>
+<script type='text/javascript' src='js/config.js'></script>
+<script type='text/javascript' src='js/fnc.js'></script>
+<link id="lcss" rel='stylesheet' href='css/style_big.css' type='text/css' media='all' />
+</head>
+<!--
+Версия 2.3
+Автор скрипта (исключая jquery, разумеется): Анатолий Веснин (http://habrahabr.ru/users/avesnin)
+Автор стиля с большими размерами (версии до 2.1): Иван Тремичев (http://habrahabr.ru/users/meft)
+Поискать новую версию можно тут: avesnin.ru
+!-->
+<body>
+<ul id="tabs">
+	<li><a href="#" title="tab1">Игра</a></li>
+	<li><a href="#" title="tab2">Информация</a></li>
+	<li><a href="#" title="tab3">Настройки</a></li>
+</ul>
+
+<div id="content">
+	<div id="tab1">
+		<div id="dGameBtns">
+		<input id="btnGamerAdd" type="button" value="+" />
+		<input id="btnSpreadRoles" type="button" value="Раздать роли" disabled />
+		<input id="btnBegin" type="button" value="Начать игру" disabled />
+		<input id="btnReset" type="button" value="Заново" disabled />
+		</div>
+		<div id="dInfo">Игроков: 0&nbsp;&nbsp;Мафии: 0</div>
+		<div id="cover" class="clear table left">
+			<div class="tr" id="tr0">
+				<div class="th clNums"></div>
+				<div class="th clNames"></div>
+				<div class="th clRoles"></div>
+			</div>
+		</div>
+		<div id="dBtnRounds">&nbsp;</div>
+		<div id="dDebug">&nbsp;</div>
+	</div>
+	<div id="tab2">
+		<div id="dInfoSigns">&nbsp;</div>
+		<div><h4>Описание действий ролей:</h4>
+<strong>Мафия</strong> - подручные Босса мафии. Убивают мирных. Ночью просыпаются после вора и убивают одного из мирных. Выигрывают, когда мафии (включая Босса) становится больше, чем мирных.<br />
+<strong>Босс мафии</strong> - главарь мафиозной группировки. Просыпается вместе со всей мафией и принимает решение об убийстве.<br />
+<strong>Обыватель</strong> - обычный мирный житель (по умолчанию обозначем пробелом). Ночью спит. Выигрывает, когда вся мафия мертва.<br />
+<strong>Комиссар</strong> - мирный житель. Ночью просыпается и узнаёт роль одного из игроков. Роль Босса узнать не может, считает его мирным.<br />
+<strong>Доктор</strong> - мирный житель. Ночью просыпается и указывает игрока, которого будет лечить. Если мафия пыталась убить этого игрока, то игрок не умирает.<br />
+<strong>Красотка</strong> - мирный житель. Ночью просыпается и указывает игрока, которого будет спасать от мафии. Если мафия пыталась убить этого игрока, то игрок не умирает. Если мафия убивает красотку, то умирает и спасаемый ею игрок.<br />
+<strong>Бессмертный</strong> - мирный житель. Ночью спит. Мафия не может убить его ночью, кроме того случая, когда вор &laquo;украл&raquo; его роль. Однако днём его могут казнить.<br />
+<strong>Маньяк</strong> - условно мирный житель. Ночью просыпается и указывает игрока. Игрок в следующий игровой день считается &laquo;заманьяченым&raquo; и не может участвовать в обсуждении и голосовать. Против такого игрока голосовать можно. Маньяк может убивать (см. config.js)<br />
+<strong>Вор</strong> - условно мирный житель. Ночью просыпается раньше всех и указывает игрока, у которого &laquo;ворует&raquo; роль. Игрок, проснувшись в свою очередь, выполняет своё действие, но это не имеет значения. Сам игрок не знает, что его роль &laquo;своровали&raquo;. Если вор &laquo;украл&raquo; роль <strong>Бессмертного</strong>, то на эту ночь становится бессмертным, но сам об этом не знает.<br />
+<strong>Смертник</strong> - условно мирный житель. Ночью спит. Днём до объявления приговора ведущим имеет право взорвать себя и любого игрока.<br />
+		</div>
+	</div>
+	<div id="tab3">
+		<select id="sCSS"><option value="style_big.css">Большой</option><option value="style_small.css">Маленький</option></select>
+		<input type="button" onclick="loadCSS();" value="Загрузить CSS" />
+	</div>
+</div>
+
+

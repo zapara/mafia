@@ -1,0 +1,147 @@
+body{font-family:Verdana,Arial;font-size:12px}
+::-moz-focus-inner{padding:0;border:0}
+#tabs{overflow:hidden;width:100%;margin:0;padding:0;list-style:none}
+#tabs li{float:left;margin:0 .5em 0 0}
+#tabs a{
+	position:relative;
+	background:#ddd;
+	background-image: linear-gradient(to left bottom, #fff, #ddd);
+	padding:4px 10px;
+	float: left;
+	text-decoration: none;
+	color: #444;
+	text-shadow: 0 1px 0 rgba(255,255,255,.8);
+	border-radius: 5px 0 0 0;
+	box-shadow: 0 2px 2px rgba(0,0,0,.4);
+}
+#tabs a:hover, #tabs a:hover::after, #tabs a:focus, #tabs a:focus::after{background:#fff}
+#tabs a:focus{outline:0}
+#tabs a::after{
+	content:'';
+	position:absolute;
+	z-index: 1;
+	top: 0;
+	right: -.5em;
+	bottom: 0;
+	width: 1em;
+	background: #ddd;
+	background-image: linear-gradient(to bottom, #fff, #ddd);
+	box-shadow: 2px 2px 2px rgba(0,0,0,.4);
+	transform: skew(10deg);
+	border-radius: 0 5px 0 0;
+}
+#tabs #current a,#tabs #current a::after{background:#fff;z-index:3}
+#content{background:#fff;padding-top:10px;min-height:220px;position:relative;z-index:2;border-radius:0 5px 5px;box-shadow:0 -2px 3px -2px rgba(0, 0, 0, .5)}
+.left{float:left}
+.right{float:right}
+.tright{text-align:right}
+.clear{clear:both}
+.mousehand{cursor:pointer}
+.mousehand:hover{background:#ccc}
+
+#dDebug{background:#fcc;float:left;visibility:hidden}
+#dBtnRounds{float:left}
+
+.table{display:table}
+.tr{display:table-row;vertical-align:top;height:25px}
+.td,.th{display:table-cell;vertical-align:top;padding:1px 2px 1px 2px;line-height:25px}
+.th{text-align:center;background:#9c9}
+
+#cover{clear:both}
+#cover .td,.th {border-right:1px solid #000;border-bottom:1px solid #000}
+#cover .th{border-top:1px solid #000}
+
+.clNums{width:70px;border-left:1px solid #000}
+.clNames{min-width:150px}
+.clRoles{width:100px}
+
+.clNames input, .clRoles select{
+	outline:0;
+	border:0;
+	height:24px;
+	width:150px;
+	font-size:12px;
+	float:left;
+}
+.clNames .foul{
+}
+
+.clRoles select{
+	width:100px;
+	background:#fff;
+}
+
+span{
+	display:block;
+	height:25px;
+	font-size: 14px;
+}
+.sDigit, .sBtn, .btnSmall{
+	float:left;
+}
+.sBtn, .btnSmall{
+	background:#eee;
+	outline:1px #ccc solid;
+}
+.sDigit{
+	width:32px;
+	text-align:center;
+}
+.sBtn{
+	width:20px;
+	text-align:center;
+	line-height:25px;
+}
+.btnSmall{
+	width:12px;
+	height:12px;
+	font-size:8px;
+	padding:0;
+	margin:0;
+	text-align:center;
+	line-height:9px;
+}
+.clRound input{
+ width:22px;
+ float:left;
+ height:22px;
+ line-height: 0;
+ margin:0;
+ font-size:12px;
+ padding:0 3px;
+}
+.btnSelected{
+	font-weight:bold;
+	color:#faa;
+}
+
+#dGameBtns{
+	width:350px;
+	float:left;
+	margin-bottom:10px;
+}
+#dGameBtns input{
+	height:22px;
+}
+#btnGamerAdd{
+	width:38px;
+}
+#btnSpreadRoles{
+	width:123px;
+}
+
+#btnNight, #btnDay, #btnClear, #btnTimer{
+	height:22px;
+	width:75px;
+	margin:0;
+	margin-bottom:5px;
+}
+#btnClear{
+	width: auto;
+}
+.gamerDie {
+	background:#ccc !important;
+}
+.roleMaff{
+	background:#fce4d6;
+}
